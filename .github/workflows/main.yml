@@ -20,5 +20,5 @@ jobs:
           template-id: '38'
           additional-vars: |
             {
-                "var_environment": "test"
+                "var_aws_environment": "test"
             }
