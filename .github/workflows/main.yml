@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Trial Run Ansible Tower
         id: ansible
-        uses: ./
+        uses: /
         with:
           ansible-tower-user: ${{ secrets.CERTARA_ANSIBLE_TOWER_USER }}
           ansible-tower-pass: ${{ secrets.CERTARA_ANSIBLE_TOWER_PASSWORD }}
