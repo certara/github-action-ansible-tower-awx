@@ -10,10 +10,13 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Trial Run Ansible Tower
         id: ansible
         uses: ./
         with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ansible-tower-user: ${{ secrets.CERTARA_ANSIBLE_TOWER_USER }}
           ansible-tower-pass: ${{ secrets.CERTARA_ANSIBLE_TOWER_PASSWORD }}
           ansible-tower-url: ${{ secrets.CERTARA_ANSIBLE_TOWER_URL }}
