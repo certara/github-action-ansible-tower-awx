@@ -59,7 +59,7 @@ async function getRequestData() {
 }
 
 async function launchJob(requestData: any) {
-  console.log(`Launching Template ID ${requestData.templateId} on Ansible Tower...`);
+  console.log(`Launching Template ID ${requestData.templateId} on URL ${requestData.baseUrl}`);
 
   const options = {
     method: 'POST',
