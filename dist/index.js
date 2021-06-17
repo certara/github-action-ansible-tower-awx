@@ -7662,7 +7662,7 @@ var crypto = __nccwpck_require__(6417)
  * Valid keys.
  */
 
-var keys =
+var keys = 
   [ 'acl'
   , 'location'
   , 'logging'
@@ -7701,7 +7701,7 @@ module.exports.authorization = authorization
  * @param {Object} options
  * @return {String}
  * @api private
- */
+ */ 
 
 function hmacSha1 (options) {
   return crypto.createHmac('sha1', options.secret).update(options.message).digest('base64')
@@ -7710,8 +7710,8 @@ function hmacSha1 (options) {
 module.exports.hmacSha1 = hmacSha1
 
 /**
- * Create a base64 sha1 HMAC for `options`.
- *
+ * Create a base64 sha1 HMAC for `options`. 
+ * 
  * @param {Object} options
  * @return {String}
  * @api private
@@ -7724,10 +7724,10 @@ function sign (options) {
 module.exports.sign = sign
 
 /**
- * Create a base64 sha1 HMAC for `options`.
+ * Create a base64 sha1 HMAC for `options`. 
  *
  * Specifically to be used with S3 presigned URLs
- *
+ * 
  * @param {Object} options
  * @return {String}
  * @api private
@@ -7743,7 +7743,7 @@ module.exports.signQuery= signQuery
  * Return a string for sign() with the given `options`.
  *
  * Spec:
- *
+ * 
  *    <verb>\n
  *    <md5>\n
  *    <content-type>\n
@@ -7759,7 +7759,7 @@ module.exports.signQuery= signQuery
 function stringToSign (options) {
   var headers = options.amazonHeaders || ''
   if (headers) headers += '\n'
-  var r =
+  var r = 
     [ options.verb
     , options.md5
     , options.contentType
@@ -7775,7 +7775,7 @@ module.exports.stringToSign = stringToSign
  * for S3 presigned URLs
  *
  * Spec:
- *
+ * 
  *    <date>\n
  *    <resource>
  *
@@ -12610,28 +12610,28 @@ __nccwpck_require__(615)(Promise, apiRejection, tryConvertToPromise, createConte
 __nccwpck_require__(7205)(Promise);
 __nccwpck_require__(6170)(Promise, INTERNAL);
 __nccwpck_require__(8417)(Promise, INTERNAL);
-
-    util.toFastProperties(Promise);
-    util.toFastProperties(Promise.prototype);
-    function fillTypes(value) {
-        var p = new Promise(INTERNAL);
-        p._fulfillmentHandler0 = value;
-        p._rejectionHandler0 = value;
-        p._promise0 = value;
-        p._receiver0 = value;
-    }
-    // Complete slack tracking, opt out of field-type tracking and
-    // stabilize map
-    fillTypes({a: 1});
-    fillTypes({b: 2});
-    fillTypes({c: 3});
-    fillTypes(1);
-    fillTypes(function(){});
-    fillTypes(undefined);
-    fillTypes(false);
-    fillTypes(new Promise(INTERNAL));
-    debug.setBounds(Async.firstLineError, util.lastLineError);
-    return Promise;
+                                                         
+    util.toFastProperties(Promise);                                          
+    util.toFastProperties(Promise.prototype);                                
+    function fillTypes(value) {                                              
+        var p = new Promise(INTERNAL);                                       
+        p._fulfillmentHandler0 = value;                                      
+        p._rejectionHandler0 = value;                                        
+        p._promise0 = value;                                                 
+        p._receiver0 = value;                                                
+    }                                                                        
+    // Complete slack tracking, opt out of field-type tracking and           
+    // stabilize map                                                         
+    fillTypes({a: 1});                                                       
+    fillTypes({b: 2});                                                       
+    fillTypes({c: 3});                                                       
+    fillTypes(1);                                                            
+    fillTypes(function(){});                                                 
+    fillTypes(undefined);                                                    
+    fillTypes(false);                                                        
+    fillTypes(new Promise(INTERNAL));                                        
+    debug.setBounds(Async.firstLineError, util.lastLineError);               
+    return Promise;                                                          
 
 };
 
@@ -15408,11 +15408,11 @@ exports.ECKey = function(curve, key, isPublic)
 //      var y = key.slice(bytes+1);
 //      this.P = new ECPointFp(curve,
 //        curve.fromBigInteger(new BigInteger(x.toString("hex"), 16)),
-//        curve.fromBigInteger(new BigInteger(y.toString("hex"), 16)));
+//        curve.fromBigInteger(new BigInteger(y.toString("hex"), 16)));      
       this.P = curve.decodePointHex(key.toString("hex"));
     }else{
       if(key.length != bytes) return false;
-      priv = new BigInteger(key.toString("hex"), 16);
+      priv = new BigInteger(key.toString("hex"), 16);      
     }
   }else{
     var n1 = n.subtract(BigInteger.ONE);
@@ -15434,7 +15434,7 @@ exports.ECKey = function(curve, key, isPublic)
       if(!key || !key.P) return false;
       var S = key.P.multiply(priv);
       return Buffer.from(unstupid(S.getX().toBigInteger().toString(16),bytes*2),"hex");
-   }
+   }     
   }
 }
 
@@ -15881,7 +15881,7 @@ ECFieldElementFp.prototype.modReduce = function(x)
             {
                 u = u.multiply(this.getR());
             }
-            x = u.add(v);
+            x = u.add(v); 
         }
         while (x.compareTo(q) >= 0)
         {
@@ -16634,8 +16634,8 @@ var util = __nccwpck_require__(1669)
   , net = __nccwpck_require__(1631)
   , tls = __nccwpck_require__(4016)
   , AgentSSL = __nccwpck_require__(7211).Agent
-
-function getConnectionName(host, port) {
+  
+function getConnectionName(host, port) {  
   var name = ''
   if (typeof host === 'string') {
     name = host + ':' + port
@@ -16644,7 +16644,7 @@ function getConnectionName(host, port) {
     name = host.host + ':' + host.port + ':' + (host.localAddress ? (host.localAddress + ':') : ':')
   }
   return name
-}
+}    
 
 function ForeverAgent(options) {
   var self = this
@@ -16662,7 +16662,7 @@ function ForeverAgent(options) {
     } else if (self.sockets[name].length < self.minSockets) {
       if (!self.freeSockets[name]) self.freeSockets[name] = []
       self.freeSockets[name].push(socket)
-
+      
       // if an error happens while we don't use the socket anyway, meh, throw the socket away
       var onIdleError = function() {
         socket.destroy()
@@ -16688,7 +16688,7 @@ ForeverAgent.prototype.createConnection = net.createConnection
 ForeverAgent.prototype.addRequestNoreuse = Agent.prototype.addRequest
 ForeverAgent.prototype.addRequest = function(req, host, port) {
   var name = getConnectionName(host, port)
-
+  
   if (typeof host !== 'string') {
     var options = host
     port = options.port
@@ -16717,7 +16717,7 @@ ForeverAgent.prototype.removeSocket = function(s, name, host, port) {
     delete this.sockets[name]
     delete this.requests[name]
   }
-
+  
   if (this.freeSockets[name]) {
     var index = this.freeSockets[name].indexOf(s)
     if (index !== -1) {
@@ -19663,8 +19663,8 @@ var validate = exports._validate = function(/*Any*/instance,/*Object*/schema,/*O
 			if(typeof instance != 'object' || instance instanceof Array){
 				errors.push({property:path,message:"an object is required"});
 			}
-
-			for(var i in objTypeDef){
+			
+			for(var i in objTypeDef){ 
 				if(objTypeDef.hasOwnProperty(i)){
 					var value = instance[i];
 					// skip _not_ specified properties
@@ -21142,7 +21142,7 @@ function compare (a, b) {
 }
 
 function generateBase (httpMethod, base_uri, params) {
-  // adapted from https://dev.twitter.com/docs/auth/oauth and
+  // adapted from https://dev.twitter.com/docs/auth/oauth and 
   // https://dev.twitter.com/docs/auth/creating-signature
 
   // Parameter normalization
@@ -40081,7 +40081,7 @@ module.exports = require("zlib");;
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/
+/******/ 	
 /******/ 	// The require function
 /******/ 	function __nccwpck_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -40095,7 +40095,7 @@ module.exports = require("zlib");;
 /******/ 			loaded: false,
 /******/ 			exports: {}
 /******/ 		};
-/******/
+/******/ 	
 /******/ 		// Execute the module function
 /******/ 		var threw = true;
 /******/ 		try {
@@ -40104,14 +40104,14 @@ module.exports = require("zlib");;
 /******/ 		} finally {
 /******/ 			if(threw) delete __webpack_module_cache__[moduleId];
 /******/ 		}
-/******/
+/******/ 	
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-/******/
+/******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/
+/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -40124,7 +40124,7 @@ module.exports = require("zlib");;
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -40136,12 +40136,12 @@ module.exports = require("zlib");;
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__nccwpck_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -40152,7 +40152,7 @@ module.exports = require("zlib");;
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/node module decorator */
 /******/ 	(() => {
 /******/ 		__nccwpck_require__.nmd = (module) => {
@@ -40161,9 +40161,9 @@ module.exports = require("zlib");;
 /******/ 			return module;
 /******/ 		};
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/compat */
-/******/
+/******/ 	
 /******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";/************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
@@ -40212,6 +40212,7 @@ function getRequestData() {
         const certPath = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('certificate-path');
         let certBase64 = '';
         const requestData = { extraVars: {}, templateId };
+        console.log(`Run configured to use Tower/AWX baseurl: ${url}`);
         if (certPath) {
             certBase64 = yield base64Encode(certPath);
         }

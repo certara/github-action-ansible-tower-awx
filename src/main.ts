@@ -24,6 +24,8 @@ async function getRequestData() {
   let certBase64 = '';
   const requestData: any = { extraVars: {}, templateId };
 
+  console.log(`Run configured to use Tower/AWX baseurl: ${url}`);
+
   if (certPath) {
     certBase64 = await base64Encode(certPath);
   }
