@@ -1,0 +1,28 @@
+name: 'Run Ansible Playbook on Tower/AWX'
+description: 'Github action that allows you to run a playbook via HTTPS call to Ansible Tower/AWX'
+author: 'Victor Ortegon'
+branding:
+  color: red
+  icon: play-circle
+inputs:
+  ansible-tower-user:
+    description: 'Ansible Tower/AWX User'
+    required: true
+  ansible-tower-pass:
+    description: 'Ansible Tower/AWX Password'
+    required: true
+  ansible-tower-url:
+    description: 'Ansible Tower/AWX URL'
+    required: true
+  template-id:
+    description: 'Template id on Ansible Tower/AWX'
+    required: true
+  additional-vars:
+    description: 'Extra vars required by the ansible playbook'
+    required: false
+outputs:
+  RESOURCE_NAME:
+    description: 'Component resource name output'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
