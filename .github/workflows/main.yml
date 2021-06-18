@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   test_ansible_tower:
-    runs-on: self-hosted
+    runs-on: [self-hosted, ansible]
     steps:
       # To use this repository's private action,
       # you must check out the repository
