@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   test_ansible_tower:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       # To use this repository's private action,
       # you must check out the repository
@@ -18,7 +18,7 @@ jobs:
         with:
           ansible-tower-user: ${{ secrets.CERTARA_ANSIBLE_TOWER_USER }}
           ansible-tower-pass: ${{ secrets.CERTARA_ANSIBLE_TOWER_PASSWORD }}
-          ansible-tower-url: 'https://awx.certara-config.cloud/'
+          ansible-tower-url: 'http://ip-172-16-0-220.ec2.internal/'
           # ansible-tower-url: ${{ secrets.CERTARA_ANSIBLE_TOWER_URL }}
           template-id: '38'
           additional-vars: |
