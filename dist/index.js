@@ -40226,7 +40226,7 @@ function getRequestData() {
                 sendImmediately: true,
             },
         });
-        requestData.extraVars.extra_vars = Object.assign({}, (certBase64 != null && {
+        requestData.extraVars.extra_vars = Object.assign({}, (certBase64 != '' && {
             var_applicationGatewayFrontEndSslCertData: certBase64,
         }));
         Object.assign(requestData.extraVars.extra_vars, additionalVars);
@@ -40241,7 +40241,7 @@ function getRequestData() {
 }
 function launchJob(requestData) {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(`Launching Template ID ${requestData.templateId} on URL ${requestData.baseUrl}`);
+        console.log(`Launching Template ID: ${requestData.templateId}`);
         const options = {
             method: 'POST',
             url: `api/v2/job_templates/${requestData.templateId}/launch/`,

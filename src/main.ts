@@ -42,7 +42,7 @@ async function getRequestData() {
   });
 
   requestData.extraVars.extra_vars = {
-    ...(certBase64 != null && {
+    ...(certBase64 != '' && {
       var_applicationGatewayFrontEndSslCertData: certBase64,
     }),
   };
@@ -61,7 +61,7 @@ async function getRequestData() {
 }
 
 async function launchJob(requestData: any) {
-  console.log(`Launching Template ID ${requestData.templateId} on URL ${requestData.baseUrl}`);
+  console.log(`Launching Template ID: ${requestData.templateId}`);
 
   const options = {
     method: 'POST',

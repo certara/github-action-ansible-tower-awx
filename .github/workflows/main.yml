@@ -16,7 +16,8 @@ jobs:
         with:
           ansible-tower-user: ${{ secrets.CERTARA_ANSIBLE_TOWER_USER }}
           ansible-tower-pass: ${{ secrets.CERTARA_ANSIBLE_TOWER_PASSWORD }}
-          ansible-tower-url: ${{ secrets.CERTARA_ANSIBLE_TOWER_URL }}
+          ansible-tower-url: 'https://awx.certara-config.cloud/'
+          # ansible-tower-url: ${{ secrets.CERTARA_ANSIBLE_TOWER_URL }}
           template-id: '38'
           additional-vars: |
             {
