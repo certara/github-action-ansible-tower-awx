@@ -1,0 +1,51 @@
+{
+  "name": "github-action-ansible-tower-awx",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Github Action that allows you to run a playbook on Ansible Tower/AWX",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/main.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/certara/github-action-ansible-tower-awx.git"
+  },
+  "keywords": [
+    "actions",
+    "ansible",
+    "awx",
+    "tower"
+  ],
+  "eslintIgnore": [
+    "node_modules",
+    "dist"
+  ],
+  "author": "Certara, Inc.",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/github": "^5.0.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.3",
+    "@types/node": "^12.0.4",
+    "jest": "^27.0.4",
+    "jest-circus": "^27.0.4",
+    "ts-jest": "^27.0.3",
+    "typescript": "^3.8.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "@typescript-eslint/parser": "^4.26.1",
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb-typescript": "^12.3.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.3.1"
+  }
+}
