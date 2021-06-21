@@ -5,22 +5,23 @@
   "description": "Github Action that allows you to run a playbook on Ansible Tower/AWX",
   "main": "dist/index.js",
   "scripts": {
-    "build": "ncc build src/main.ts",
-    "test": "jest"
+    "build": "ncc build src/main.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vortegon/github-action-ansible-tower.git"
+    "url": "https://github.com/certara/github-action-ansible-tower-awx.git"
   },
   "keywords": [
     "actions",
-    "ansible tower"
+    "ansible",
+    "awx",
+    "tower"
   ],
   "eslintIgnore": [
     "node_modules",
     "dist"
   ],
-  "author": "Victor Ortegon",
+  "author": "Certara, Inc.",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.4.0",

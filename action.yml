@@ -1,6 +1,6 @@
 name: 'Run Ansible Playbook on Tower/AWX'
 description: 'Github action that allows you to run a playbook via HTTPS call to Ansible Tower/AWX'
-author: 'Victor Ortegon'
+author: 'Certara, Inc.'
 branding:
   color: red
   icon: play-circle
